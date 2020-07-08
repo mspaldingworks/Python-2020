@@ -1,0 +1,81 @@
+import rpi_gpio
+import random
+import time
+import pygame, sys
+pygame.mixer.init()
+pygame.init()
+
+sounda= pygame.mixer.Sound("beat.wav")
+sounda.play()
+
+
+# init volume
+pygame.mixer.pre_init(frequency=44100, size=-16, channels=1)
+# pygame.mixer.init()
+
+pygame.event.wait()
+pygame.mixer.music.stop
+
+
+# sound1=pygame.mixer.Sound("beat.wav")
+# sound1.set_volume(1.0)
+# # print (sound1.get_volume())
+# sound1.play()
+# #
+# file = 'amelie_ost.mp3'
+# pygame.init()
+# pygame.mixer.init()
+# pygame.mixer.music.load(file)
+# pygame.mixer.music.play()
+# pygame.event.wait()
+
+# from pygame import mixer
+#
+# file = 'amelie_ost.mp3'
+# mixer.pre_init(44100, -16, 2, 2048) # setup mixer to avoid sound lag
+# mixer.init()
+# mixer.music.load(file)
+# mixer.music.play()
+
+
+
+
+prevPath=""
+currPath=""
+def playSound(path):
+    mixer.music.stop()
+    mixer.music.load(path)
+    mixer.music.play()
+
+def getRandomFileinFolder(dir):
+  filename = random.choice(dircache.listdir(dir))
+  path = os.path.join(dir, filename)
+  return path
+
+def getaRandomFile():
+  dir=random.randint(1,9)
+  return getRandomFileinFolder(str(dir))
+
+def getPath(key):
+  global currPath
+  global prevPath
+  if ( key!="#" and key!="*" and key!="0"):
+    path=getRandomFileinFolder(key)
+  if (key=="0"):
+    path=currPath 
+  elif (key=="*"):
+    path=getaRandomFile()
+    # Some random sound
+  elif (key=="#"):
+    path=prevPath
+
+  if ( key!="#" and key!="*" ):
+    prevPath=currPath
+    currPath=path
+  return path
+
+
+
+def processKey(key):
+  path=getPath(key)
+  playSound(path)
