@@ -6,7 +6,7 @@ from pygame import mixer
 pygame.mixer.init()
 pygame.init()
 
-pre_init(frequency=44100, size=-16, channels=4, buffer=512, devicename=Peedrum) -> Nonepygame.mixer.pre_init(frequency=44100, size=-16, channels=1)
+pre_init(frequency=44100, size=-16, channels=4, buffer=512, devicename=Peedrum) -> Nonepygame.mixer.pre_init(frequency=44100, size=-16, channels=1, fadeout=5000, fadein_length=5000)
 
 # request sound dictionary from Github
 r= requests.get(#link to Github sound library)
@@ -24,51 +24,31 @@ while True:
                 if (event.type == KEYDOWN and event.key == K_1):	
 		              if boolean:
 			            pygame.mixer.Channel(0).set_volume(0.0, 1.0)
-			            pygame.mixer.Channel(0).play(pygame.mixer.Sound(root_path + "01_E.wav"), loops = -1, fade_ms = fadein_length)
+			            pygame.mixer.Channel(0).play(pygame.mixer.Sound(https://raw.githubusercontent.com/mspaldingworks/Python-2020/master/Loop2.wav), loops = -1, fade_ms = fadein_length)
 		            else:
 			            pygame.mixer.Channel(0).fadeout(fadeout_length)
 	              
                 if (event.type == KEYDOWN and event.key == K_2):	
 		              if boolean:
 			            pygame.mixer.Channel(1).set_volume(0.0, 1.0)
-			            pygame.mixer.Channel(1).play(pygame.mixer.Sound(root_path + "01_E.wav"), loops = -1, fade_ms = fadein_length)
+			            pygame.mixer.Channel(1).play(pygame.mixer.Sound(https://raw.githubusercontent.com/mspaldingworks/Python-2020/master/Loop3.wav), loops = -1, fade_ms = fadein_length)
 		            else:
 			            pygame.mixer.Channel(1).fadeout(fadeout_length)
 	              
                 if (event.type == KEYDOWN and event.key == K_3):	
 		              if boolean:
 			            pygame.mixer.Channel(2).set_volume(0.0, 1.0)
-			            pygame.mixer.Channel(2).play(pygame.mixer.Sound(root_path + "01_E.wav"), loops = -1, fade_ms = fadein_length)
+			            pygame.mixer.Channel(2).play(pygame.mixer.Sound(https://raw.githubusercontent.com/mspaldingworks/Python-2020/master/Loop4.wav), loops = -1, fade_ms = fadein_length)
 		            else:
 			            pygame.mixer.Channel(2).fadeout(fadeout_length)
                 
                 if (event.type == KEYDOWN and event.key == K_4):	
 		              if boolean:
 			            pygame.mixer.Channel(3).set_volume(0.0, 1.0)
-			            pygame.mixer.Channel(3).play(pygame.mixer.Sound(root_path + "01_E.wav"), loops = -1, fade_ms = fadein_length)
+			            pygame.mixer.Channel(3).play(pygame.mixer.Sound(https://raw.githubusercontent.com/mspaldingworks/Python-2020/master/Loop4.wav), loops = -1, fade_ms = fadein_length)
 		            else:
 			            pygame.mixer.Channel(3).fadeout(fadeout_length)
-
-# initiate sound play while button is held 
-i = 1
-while game press= true:
-  play(Sound1)
-  i += 1
-
-
-sound1= pygame.mixer.Sound(#URL for wav1)
-sound1.set_volume(1.0)
-sound1.play()
 
 class instrument:
   def __init__(self, name):
     self.drum = name
-
-
-sound1= pygame.mixer.Sound(#URL for wav1)
-sound1.set_volume(1.0)
-sound1.play()
-
-# initialize play sound function
-sounda= pygame.mixer.Sound("beat.wav")
-sounda.play()
